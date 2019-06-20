@@ -7,7 +7,8 @@ import TodoButton from "./TodoButton";
 export default function Todo({
   todo: { label, complete = false },
   onComplete,
-  onDelete
+  onDelete,
+  onDuplicate
 }) {
   return (
     <span
@@ -20,6 +21,7 @@ export default function Todo({
       </TodoButton>
 
       <TodoButton onClick={onDelete}>X</TodoButton>
+      <TodoButton onClick={onDuplicate}>D</TodoButton>
     </span>
   );
 }
@@ -30,5 +32,6 @@ Todo.propTypes = {
     complete: PropTypes.bool
   }).isRequired,
   onComplete: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  onDuplicate: PropTypes.func.isRequired
 };
